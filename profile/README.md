@@ -1,113 +1,122 @@
 # Angeo — AI Engine Optimization for Magento 2
 
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
-![PHP](https://img.shields.io/badge/php-%3E%3D8.1-8892BF.svg)
-![Magento 2](https://img.shields.io/badge/Magento-2.4%2B-orange.svg)
+![PHP](https://img.shields.io/badge/PHP-8.1%20%E2%80%93%208.5-8892BF.svg)
+![Magento 2](https://img.shields.io/badge/Magento-2.4.6%20%E2%80%93%202.4.9-orange.svg)
 ![Adobe Commerce](https://img.shields.io/badge/Adobe%20Commerce-compatible-red.svg)
+![Hyvä](https://img.shields.io/badge/Hyv%C3%A4-compatible-brightgreen.svg)
 
-**Open-source AEO (AI Engine Optimization) modules that make Magento stores visible in ChatGPT (OpenAI), Gemini (Google), Perplexity, and Claude (Anthropic).**
+**Open-source modules that make Magento 2 stores visible to ChatGPT (OpenAI), Gemini (Google), Perplexity and Claude (Anthropic) — and let AI agents search, check and buy from them.**
 
-Most Magento stores are invisible to AI by default. As AI shopping and agentic commerce become real discovery channels, the stores that win are the ones AI systems can read. If ChatGPT or Perplexity recommend products in your category, they're likely sending users to your competitors — not because of SEO, but because your store isn't readable by AI systems.
+Most Magento stores are invisible to AI by default. AI crawlers are blocked, product data is not structured, and there is no machine-readable way for an agent to shop. When an assistant recommends products in your category, it sends buyers to the stores it can read.
 
-A suite of open-source modules that fix the technical signals AI systems rely on. Default Magento 2 installations typically score low on the AI-readiness signals measured by Angeo's 15-signal AEO framework. Most stores can significantly improve their AEO score in under 90 minutes.
+Angeo fixes the technical signals AI systems rely on: crawler access, `llms.txt`, JSON-LD schema, product feeds, and the agentic commerce protocols (UCP and MCP).
 
 ---
 
 ## About Angeo
 
-Angeo is a Magento 2 AEO studio focused on one question: when an AI assistant recommends products in your category, is your store in the answer? We build open-source modules that fix the structured-data, crawler-access, and feed signals that ChatGPT, Gemini, Perplexity, and Claude rely on — and we run them in our own work every day.
+Angeo is a Magento 2 AEO studio built around one question: when an AI assistant recommends products in your category, is your store in the answer?
 
-Angeo participates in Anthropic's Claude Partner Network (Registered tier) and builds Magento AI Commerce tooling using Claude alongside OpenAI and Google AI technologies.
+We build open-source modules for the signals behind that answer and run them on our own demo store every day. Angeo is a member of Anthropic's Claude Partner Network (Registered tier) and builds Magento AI commerce tooling with Claude, OpenAI and Google AI technologies.
 
-Canonical definitions of the concepts behind this work live in our [AI Commerce glossary](https://angeo.dev/ai-commerce-stack-definition/).
+Definitions of the concepts behind this work live in our [AI Commerce glossary](https://angeo.dev/ai-commerce-stack-definition/).
 
 ---
 
 ## Why this matters now
 
-AI assistants are becoming product discovery engines. Instead of browsing dozens of search results, users increasingly ask:
+AI assistants are becoming product discovery engines. People ask:
 
 - "What's the best standing desk under €500?"
-- "Which cast iron pan should I buy for induction?"
-- "Where can I get replacement laptop batteries that ship to the EU?"
+- "Which cast iron pan works on induction?"
+- "Where can I buy replacement laptop batteries that ship to the EU?"
 
-The assistant returns one or two specific recommendations — not a page of links. If AI systems cannot access and understand your catalog, your products may never be considered for those answers. SEO decides your Google ranking; AEO decides whether you exist inside the AI's response.
+The assistant gives one or two answers — not a page of links. If AI systems cannot reach and understand your catalog, your products are never considered. SEO decides your Google ranking. AEO decides whether you are in the AI's answer.
 
 ---
 
 ## What AI systems need
 
-Before an AI assistant can recommend a product, four things usually need to happen:
+Before an AI assistant can recommend or sell a product, four things must work:
 
-1. **Crawlable** — AI bots can reach the store (robots.txt)
-2. **Discoverable** — the catalog is mapped for machines (llms.txt, sitemap)
-3. **Understandable** — products carry structured data (Product + Offer JSON-LD)
-4. **Transactable** — the merchant exposes machine-readable commerce signals (ACP / UCP feeds)
+1. **Crawlable** — AI bots can reach the store, and the WAF/CDN does not block them (robots.txt, bot verification)
+2. **Discoverable** — the catalog is mapped for machines (llms.txt, Markdown mirrors, sitemap)
+3. **Understandable** — products carry linked structured data (Product, Offer, merchant policies as JSON-LD)
+4. **Transactable** — agents can query the catalog and check out (UCP profile, MCP server, product feeds)
 
-Angeo modules focus on those technical foundations.
+Angeo modules cover all four layers.
 
 ---
 
 ## What is AEO?
 
-AEO (AI Engine Optimization) is the technical layer that makes your store readable by AI systems. If SEO is about ranking pages, AEO is about being included in answers.
+AEO (AI Engine Optimization) is the technical layer that makes your store readable by AI systems. SEO is about ranking pages. AEO is about being included in answers.
 
-It's the same idea other people call Generative Engine Optimization (GEO), AI Search Optimization, AI Visibility, or LLM Optimization — different names for the work of getting a catalog discovered, understood, and recommended by ChatGPT (OpenAI), Gemini (Google), Perplexity, and Claude (Anthropic).
-
-Key signals: robots.txt AI bot access, an llms.txt catalog map, Product JSON-LD schema with `offers.availability`, and the product feeds required for ChatGPT Shopping (Agentic Commerce Protocol format).
-
-AI-driven shopping is growing fast, and most stores haven't adapted yet. That window won't stay open.
+Other people call it Generative Engine Optimization (GEO), AI Search Optimization, AI Visibility or LLM Optimization. The work is the same: get a catalog discovered, understood and recommended by AI assistants.
 
 ---
 
 ## Why merchants use Angeo
 
 - **Open-source and MIT licensed** — inspect every signal, no black box
-- **Built specifically for Magento 2** — not a generic SEO plugin
-- **Adobe Commerce compatible** — Open Source and Adobe Commerce both supported
-- **Hyvä theme compatible** — works with modern Magento frontends
+- **Built for Magento 2** — not a generic SEO plugin
+- **Adobe Commerce and Mage-OS compatible**
+- **Hyvä compatible** — frontend output works with Hyvä themes
 - **Multi-store ready** — per-store-view configuration where it matters
-- **Based on emerging AI commerce standards** — ACP, UCP, llms.txt, schema.org
-- **Actively maintained** — updated as the protocols and AI surfaces evolve
-
----
-
-## Use cases
-
-- Losing high-intent buyers from ChatGPT / AI recommendations
-- Magento stores not appearing in ChatGPT, Perplexity, or Claude answers
-- Preparing for ChatGPT Shopping / AI-driven product discovery
-- Fixing incomplete product schema (availability, price, variants)
-- Making product catalogs accessible to AI crawlers
-- Registering an ACP product feed with OpenAI's merchant program
-- Publishing a Universal Commerce Protocol (UCP) profile for Google's AI surfaces
+- **Built on open standards** — llms.txt, schema.org, UCP, MCP, ACP, RFC 9309, RFC 9421
+- **Actively maintained** — updated as protocols and AI surfaces change
 
 ---
 
 ## Module suite
 
-Start with the audit module — it scores 15 AEO signals and tells you exactly which modules your store needs. Install only what you need, or use the full stack for maximum coverage. All repositories are public and MIT-licensed.
+Start with the audit module. It scores your store and tells you which modules you need. Install only what you need. All repositories are public and MIT licensed.
 
-| Module | Role | What it does |
-| --- | --- | --- |
-| [module-aeo-audit](https://github.com/angeo-dev/module-aeo-audit) | Diagnostic | Scores 15 AEO signals — AI bots in robots.txt, llms.txt + llms.jsonl, Product/Organization/FAQ schema, return & shipping policies, sitemap.xml, UCP profile, AI product feed, OG tags, canonical + hreflang, JSON-LD quality, well-known endpoint |
-| [module-aeo-brand-visibility](https://github.com/angeo-dev/module-aeo-brand-visibility) | Live audit | Queries ChatGPT, Claude, Perplexity, Gemini & Groq with brand-probing prompts; scores real-world AI recall, citation rate & recommendation presence. Extends the audit as a 16th signal |
-| [module-robots-txt-aeo](https://github.com/angeo-dev/module-robots-txt-aeo) | Crawlability | Injects AI crawler rules (OAI-SearchBot, GPTBot, ChatGPT-User, PerplexityBot, Google-Extended, ClaudeBot, anthropic-ai, Claude-User, Applebot, Amazonbot, Meta-ExternalAgent) without overwriting your existing robots.txt |
-| [module-llms-txt](https://github.com/angeo-dev/module-llms-txt) | Structure | Generates spec-compliant llms.txt and llms-full.txt per llmstxt.org, plus streaming JSONL for vector indexing. Multi-store, CLI, cron, Page Builder-aware |
-| [module-rich-data](https://github.com/angeo-dev/module-rich-data) | Schema | Injects spec-compliant Product, Organization, BreadcrumbList, FAQPage, and WebSite JSON-LD |
-| [module-openai-product-feed](https://github.com/angeo-dev/module-openai-product-feed) | Feed | AI-powered product feed for ChatGPT Shopping registration |
-| [module-openai-product-feed-api](https://github.com/angeo-dev/module-openai-product-feed-api) | ACP API | Full 6-endpoint ACP REST surface: feeds, products (with pagination & variants), promotions. DB-persisted feeds |
-| [module-openai-instant-checkout](https://github.com/angeo-dev/module-openai-instant-checkout) | ACP checkout | Agentic Commerce Protocol Instant Checkout — AI-driven purchases via a custom Agentic Checkout API |
-| [module-ucp](https://github.com/angeo-dev/module-ucp) | UCP profile | Spec-compliant Universal Commerce Protocol profile generator. Serves `/.well-known/ucp` at protocol 2026-04-08 with ECDSA P-256 signing keys and per-store-view capability toggles |
-| [module-ai-description-updater](https://github.com/angeo-dev/module-ai-description-updater) | Content | Generates and updates product descriptions using OpenAI, Anthropic Claude, or Google Gemini; Google Sheets source, dry-run, per-store prompts, cron |
+### Diagnose
 
-All modules: MIT licensed · PHP 8.1+ · Magento 2.4+ · Adobe Commerce compatible · Hyvä theme compatible
+| Module | What it does |
+| --- | --- |
+| [module-aeo-audit](https://github.com/angeo-dev/module-aeo-audit) | One CLI command scores 20 AEO signals in two layers: **configuration** (robots.txt, llms.txt v2, llms.jsonl, sitemap, Product / Organization / FAQ schema, merchant policies, UCP profile, AI feed, canonical + hreflang, Open Graph, well-known endpoints, agents.md, A2A agent card, Core Web Vitals) and **evidence** (WAF reality check with real AI crawler user agents, actual AI crawler activity). Exact fix commands, score trend dashboard, `--fail-on` CI gate |
+| [module-aeo-brand-visibility](https://github.com/angeo-dev/module-aeo-brand-visibility) | Asks ChatGPT, Claude, Perplexity, Gemini and Groq real shopping questions and scores whether they name, cite and recommend your store. Repeated sampling with confidence intervals, competitor tracking, share of voice, multilingual. Plugs into the audit as a live signal |
+
+### Make the store readable
+
+| Module | What it does |
+| --- | --- |
+| [module-robots-txt-aeo](https://github.com/angeo-dev/module-robots-txt-aeo) | Adds rules for 20+ AI crawlers (OpenAI, Anthropic, Google, Perplexity, Apple, Meta, Amazon, Mistral and more) without overwriting your robots.txt. Lossless RFC 9309 parsing, Content-Usage signals, and crawler verification via Web Bot Auth (RFC 9421) and vendor IP ranges |
+| [module-llms-txt](https://github.com/angeo-dev/module-llms-txt) | Generates `llms.txt`, `llms-full.txt` and `llms.jsonl` per llmstxt.org v2, plus on-the-fly Markdown page mirrors. MSI-aware stock, multi-store, CLI, cron. Also on the Adobe Commerce Marketplace |
+| [module-rich-data](https://github.com/angeo-dev/module-rich-data) | Publishes one linked JSON-LD `@graph` per page: Product, Offer, Organization, BreadcrumbList, ItemList, FAQPage, WebSite, return and shipping policies, GTIN/MPN |
+| [module-ai-description-updater](https://github.com/angeo-dev/module-ai-description-updater) | Writes and updates product descriptions with OpenAI, Claude, Gemini or Groq. Bulk CLI, cron, Google Sheets source, dry-run, per-store prompts |
+
+### Let AI agents shop
+
+| Module | What it does |
+| --- | --- |
+| [module-ucp](https://github.com/angeo-dev/module-ucp) | Universal Commerce Protocol profile at `/.well-known/ucp`, spec 2026-08-25: JWK signing keys, required capability schemas, authority binding, inbound RFC 9421 signature verification, per-store-view toggles |
+| [module-ucp-catalog](https://github.com/angeo-dev/module-ucp-catalog) | The UCP `catalog.search` and `catalog.lookup` endpoints your profile advertises, validated against the official UCP JSON Schemas |
+| [module-mcp-server](https://github.com/angeo-dev/module-mcp-server) | MCP server for Magento 2: gives Claude, ChatGPT and Gemini agents live, rate-limited, read-only access to search, product cards, categories and store info. Includes an "Add to Claude" widget |
+| [module-mcp-checkout](https://github.com/angeo-dev/module-mcp-checkout) | Six MCP tools that take an agent from search to a placed guest order, with server-side guardrails (total caps, payment whitelist, rate limits) and pay-by-link handoff (Stripe, Mollie, Adyen) |
+| [module-openai-product-feed](https://github.com/angeo-dev/module-openai-product-feed) | ACP-format product feed for ChatGPT product discovery. All product types, batch stock and category resolvers |
+| [module-openai-product-feed-api](https://github.com/angeo-dev/module-openai-product-feed-api) | ACP REST endpoints for the feed: feeds, products with pagination and variants, promotions |
+
+All Magento modules: MIT · PHP 8.1–8.5 · Magento 2.4.6–2.4.9 · Adobe Commerce compatible.
+
+▶ See an AI agent place a real order on our demo store: [MCP checkout demo](https://www.youtube.com/watch?v=rjGcpQuBSQg)
+
+### Beyond Magento modules
+
+| Repository | What it is |
+| --- | --- |
+| [claude-for-commerce-magento](https://github.com/angeo-dev/claude-for-commerce-magento) | Magento 2 implementation of `StorefrontBackend` for Anthropic's [Claude Commerce Agents](https://github.com/anthropics/commerce-agents) blueprint — the Magento counterpart to Shopify's examples |
+| [skills](https://github.com/angeo-dev/skills) | Agent Skills for AEO: audit any site for AI crawler access, llms.txt and structured data. A Claude Code plugin marketplace |
+| [awesome-magento-aeo](https://github.com/angeo-dev/awesome-magento-aeo) | Curated list of modules, specifications and tools that make Magento and Adobe Commerce stores readable and transactable by AI |
 
 ---
 
 ## Quick start
 
-⭐ Star the [audit repo](https://github.com/angeo-dev/module-aeo-audit) to track updates
+⭐ Star the [audit repo](https://github.com/angeo-dev/module-aeo-audit) to follow updates.
 
 ```bash
 # Check your store's current AEO score
@@ -116,49 +125,58 @@ bin/magento setup:upgrade
 bin/magento angeo:aeo:audit
 ```
 
-Each failed signal outputs the exact `composer require` command to fix it:
+The report shows your score and the exact modules that fix each gap:
 
 ```
-✗ FAIL  robots.txt — OAI-SearchBot blocked
-        → Fix: composer require angeo/module-robots-txt-aeo
+  AEO Score: [████████████████░░░░] 81% — Good
+  ✓ Pass: 12  ⚠ Warn: 3  ✗ Fail: 1
 
-✗ FAIL  llms.txt — not found
-        → Fix: composer require angeo/module-llms-txt
+  Critical fixes needed:
+  → Install angeo/module-openai-product-feed and register at chatgpt.com/merchants
 
-✗ FAIL  Product Schema — missing offers.availability
-        → Fix: composer require angeo/module-rich-data
+  💡 Fix with angeo modules:
+     composer require angeo/module-openai-product-feed angeo/module-openai-product-feed-api
+     composer require angeo/module-ucp
 ```
 
-Not technical? Use the web audit → [angeo.dev/ai-magento-audit/](https://angeo.dev/ai-magento-audit/)
+Not technical? Use the free web audit → [angeo.dev/ai-magento-audit/](https://angeo.dev/ai-magento-audit/)
 
 ---
 
 ## AEO score interpretation
 
-There is no official AEO standard, so these bands describe implementation strength across the signals Angeo measures — not compliance with an external spec.
+There is no official AEO standard. These bands describe how strong the implementation is across the signals Angeo measures — not compliance with an external spec.
 
 | Score | Status | Typical situation |
 | --- | --- | --- |
 | 0–25% | Needs improvement | Default Magento install. AI crawlers blocked. |
 | 26–50% | Needs improvement | Some fixes applied. Schema or feed missing. |
-| 51–75% | Moderate | Core signals in place. Feed not registered. |
+| 51–75% | Moderate | Core signals in place. Agent-facing layer missing. |
 | 76–90% | Good | Strong foundation. Minor gaps. |
-| 91–100% | Excellent | Strong AEO implementation across all measured signals. Ready for ChatGPT Shopping and AI commerce integrations. |
+| 91–100% | Excellent | Strong across all measured signals. Ready for AI agents. |
+
+---
+
+## Where to get the modules
+
+- [Packagist](https://packagist.org/packages/angeo/) — all packages
+- [Mage-OS Extension Directory](https://directory.mage-os.org/) — listed modules with quality badges
+- Adobe Commerce Marketplace — AEO LLMs Txt Generator
 
 ---
 
 ## Learn more
 
-**AI Commerce glossary — canonical definitions:**
+**AI Commerce glossary:**
 
 - [AI Commerce Stack](https://angeo.dev/ai-commerce-stack-definition/) — the five layers, from structured data to AI transactions
 - [Magento AEO](https://angeo.dev/magento-aeo-definition/) — making a Magento store readable by AI
 - [AI Commerce Visibility](https://angeo.dev/ai-commerce-visibility-definition/) — how AI selects which stores to recommend
-- [Agentic Commerce Protocol (ACP & UCP)](https://angeo.dev/agentic-commerce-protocol-definition/) — how AI agents complete purchases
+- [Agentic Commerce Protocols (ACP, UCP)](https://angeo.dev/agentic-commerce-protocol-definition/) — how AI agents complete purchases
 
-**Tools & guides:**
+**Tools and guides:**
 
 - [angeo.dev](https://angeo.dev) — documentation and guides
-- [Free AEO self-assessment](https://angeo.dev/ai-magento-audit/) — web-based audit, no CLI required
-- [Magento 2 AEO Guide 2026](https://angeo.dev/magento-2-aeo-guide/) — complete signal reference
-- [Packagist](https://packagist.org/packages/angeo/) — all packages
+- [Free AEO self-assessment](https://angeo.dev/ai-magento-audit/) — web audit, no CLI needed
+- [Magento 2 AEO Guide 2026](https://angeo.dev/magento-2-aeo-guide/) — full signal reference
+- [Magento AEO scan case study](https://angeo.dev/aeo-scan-case-study/) — results from scanning live Magento stores
